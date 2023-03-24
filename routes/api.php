@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\CollectionController;
+use App\Http\Controllers\genreController;
 
 // Route::controller(AuthController::class)->group(function () {
 //     Route::post('login', 'login');
@@ -24,3 +25,10 @@ Route::post('collection/add', [CollectionController::class, 'store']);
 Route::get('collection/edit/{id}', [CollectionController::class, 'edit']);
 Route::put('collection/edit/{id}', [CollectionController::class, 'update']);
 Route::delete('collection/delete/{id}', [CollectionController::class, 'delete']);
+
+
+Route::get('genre', [genreController::class, 'index']);
+Route::post('genre/add', [genreController::class, 'store']);
+Route::get('genre/edit/{id}', [genreController::class, 'edit']);
+Route::put('genre/edit/{id}', [genreController::class, 'update']);
+Route::delete('genre/delete/{id}', [genreController::class, 'delete']);
