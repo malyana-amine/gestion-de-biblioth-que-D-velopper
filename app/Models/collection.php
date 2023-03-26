@@ -14,4 +14,8 @@ class collection extends Model
     protected $fillable = [
         'collection',
     ];
+
+    public function livres(){
+        return $this->belongsToMany(livres::class);
+    }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\genreController;
+use App\Http\Controllers\livresController;
 
 // Route::controller(AuthController::class)->group(function () {
 //     Route::post('login', 'login');
@@ -32,3 +33,10 @@ Route::post('genre/add', [genreController::class, 'store']);
 Route::get('genre/edit/{id}', [genreController::class, 'edit']);
 Route::put('genre/edit/{id}', [genreController::class, 'update']);
 Route::delete('genre/delete/{id}', [genreController::class, 'delete']);
+
+
+Route::get('livres', [livresController::class, 'index']);
+Route::post('livres/add', [livresController::class, 'store']);
+Route::put('livres/update/{id}', [livresController::class, 'update']);
+Route::get('livres/show/{id}', [livresController::class, 'show']);
+Route::delete('livres/delete/{id}', [livresController::class, 'delete']);
