@@ -7,10 +7,14 @@ use App\Models\livres;
 use App\Models\collection;
 use Illuminate\Support\Facades\Validator;
 
+
 use Illuminate\Http\Request;
 
 class livresController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth:api');
+    }
     public function index()
     {
         $livres=livres::with(['genre','Collection'])->get();
